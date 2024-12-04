@@ -2,7 +2,7 @@
 
 TL;DR
 
-- DOM 事件序列在浏览器产生该事件时就生成好了，可以在 window 捕获事件时通过 `e.composedPath()` 观察到。
+- DOM 事件序列在浏览器产生该事件时就生成好了，可以在 window 捕获事件时通过 [`e.composedPath()`](https://stackoverflow.com/questions/26195091/determine-event-path-in-dom-event-bubbling) 观察到。
 - 事件在捕获-目标-冒泡阶段执行中，执行移动、删除相关路径上 DOM 节点的操作，不会改变或取消该事件序列的执行，且事件中访问如 `target` 等属性依旧能拿到对应的 DOM 节点。猜测这些内容可能是在生成事件序列时通过闭包保存传递了下来。
 
 _demo 代码：_
